@@ -6,23 +6,24 @@ using namespace std;
 
 class database
 {
+	// Properties
 	int accno, ssno;
 	char name[25];
-//    char first_name[20], last_name[20];
-    long long int phone;
-    float totalbal;
+	// char first_name[20], last_name[20];
+    	long long int phone;
+    	float totalbal;
 
-public:
-
-    void accept();
-    void acceptedit();
-    void display();
-    char* getname();
-    long long int getnumber();
-    int getaccno();
-    int getssno();
-    void edit_rec();
-    void delete_rec();
+	//Helper Methods for reuse
+	public:
+    		void accept();
+    		void acceptedit();
+    		void display();
+    		char* getname();
+    		long long int getnumber();
+    		int getaccno();
+    		int getssno();
+    		void edit_rec();
+    		void delete_rec();
 };
 
 void database :: accept()
@@ -80,6 +81,7 @@ int database :: getssno()
 	return ssno;
 }
 
+// create file
 void create_file()
 {
     int n;
@@ -152,6 +154,7 @@ void searchonName()
 	}
 }
 
+// search based on number
 void searchonNumber()
 {
 	ifstream file;
@@ -181,6 +184,7 @@ void searchonNumber()
 	}
 }
 
+//look for account number
 void searchonAccNumber()
 {
 	ifstream file;
@@ -210,6 +214,7 @@ void searchonAccNumber()
 	}
 }
 
+// modify name method
 void modifyonname()
 {
 	fstream file;
@@ -251,6 +256,7 @@ void modifyonname()
 	}
 }
 
+// method for modifiying account number
 void modifyonaccno()
 {
 	fstream file;
@@ -301,6 +307,8 @@ int main()
 	{
 	cout<<"\nAdmin Enter Your Password : ";
 	cin>>pass;
+	
+	//check if entered password was right.
 	if (password == pass)
 	{
 		cout<<"\n*****WELCOME ADMINISTRATOR*****\n";
@@ -317,6 +325,7 @@ int main()
 			cout<<"\n\nEnter Your Choice : ";
 			cin>>ch;
 
+			//Switch between methods based on the selected option.
 			switch(ch)
 			{
 			case 1 : create_file();			break;
