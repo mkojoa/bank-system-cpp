@@ -6,7 +6,7 @@ using namespace std;
 
 class database
 {
-	// Properties
+	// All prop
 	int accno, ssno;
 	char name[25];
 	// char first_name[20], last_name[20];
@@ -26,6 +26,7 @@ class database
     		void delete_rec();
 };
 
+//collection display
 void database :: accept()
 {
     cout<<"\nEnter Account Number: ";
